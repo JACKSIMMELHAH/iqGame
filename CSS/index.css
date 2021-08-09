@@ -1,0 +1,123 @@
+@font-face {
+  font-family: Typewriter;
+  src: url('fonts/MonospaceTypewriter.ttf');
+}
+
+
+body {
+    background-color: rgb(29, 29, 29);
+}
+
+.container {
+    color: rgb(99, 99, 99);
+    font-size: large;
+    font: 19px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif,;
+    font-family: Typewriter;
+}
+
+.center {
+  text-align: center;
+}
+
+.Sex {
+  text-align: center;
+}
+
+.Money {
+  text-align: center;
+}
+
+.showSex {
+    font-size: 32px;
+    animation: colorRotate 8s infinite
+}
+
+.Multi {
+  position: absolute;
+  top: 20%;
+}
+
+.addSex {
+  font-family : inherit;
+  font-size: 36px;
+  transition-duration: 0.4s;
+  border: rgb(29, 29, 29);
+  border-radius: 4px;
+  padding: 24px;
+  width: 80%;
+  background-color: rgb(71, 71, 71);
+}
+.addSex:hover {
+  background-color: rgb(100, 100, 100);
+  color: black;
+}
+
+.sellSex {
+  font-family : inherit;
+  font-size: 36px;
+  transition-duration: 0.4s;
+  border: rgb(129, 63, 63);
+  border-radius: 30px;
+  padding: 10px;
+  width: 50%;
+  background-color: rgb(112, 52, 52);
+}
+.sellSex:hover {
+  background-color: rgb(100, 100, 100);
+  color: black;
+}
+
+
+.sexFooter {
+  position: absolute;
+  width: 50%;
+  height: 15%;
+  bottom: 0px;
+  right: 25%;
+  left: 50%;
+  margin-left: -20%;
+}
+
+.sellFooter {
+  position: absolute;
+  width: 20%;
+  height: 95%;
+  bottom: 0px;
+  right: 25%;
+  left: 110%;
+  margin-left: -50%;
+}
+
+.addSexMulti {
+  position: absolute;
+  top: 21.6%;
+  left: 15%;
+  font-family : inherit;
+  font-size: 18px;
+  transition-duration: 0.4s;
+  border: rgb(129, 63, 63);
+  border-radius: 10px;
+  background-color: rgb(112, 52, 52);
+}
+.addSexMulti:hover {
+  background-color: rgb(100, 100, 100);
+  color: black;
+}
+
+@keyframes colorRotate {
+    from {
+      color: #6666ff;
+    }
+    10% {
+      color: #0099ff;
+    }
+    50% {
+      color: #00ff00;
+    }
+    75% {
+      color: #ff3399;
+    }
+    100% {
+      color: #6666ff;
+    }
+  }

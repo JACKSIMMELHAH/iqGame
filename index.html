@@ -1,20 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-	<link rel="stylesheet" href="index.css">
-	<script src="index.js"></script>
+	<link rel="stylesheet" href="CSS\index.css">
+	<script src="JAVASCRIPT\index.js"></script>
 </head>
 
 <body>
-	<button class="addSex" onclick="addSex()">Get Sex</button>
-	<button class="sellSex" onclick="sellSex()">Sell Sex</button>
-	<button class="addSexMulti" title="Add +0.1x Sex Multi. Cost: 10000 money" onclick="addSexMulti()">Get Sex
-		multi</button>
-	<p id="showSex">You have this many Sex: 0</p>
-	<p id="totalMoney">Money: 0</p>
-	<p id="showMulti">Sex Multi: 1x</p>
 
+	<div class="container">
+			
+				<p class="sexFooter">
+					<button class="addSex" onclick="addSex()">Get Sex</button>
+				</p>
+					
+				
+				
+				<p class="sellFooter">
+					<button class="sellSex" onclick="sellSex()">Sell your Sex</button>
+				</p>
+
+
+
+				<p class="addMultiFooter">
+					<button class="addSexMulti" onclick="addSexMulti()">Buy Sex Multi</button>
+				</p>
+			
+
+
+
+
+
+		<d class="Sex">
+			<p class="mainSex" id="mainSex">You have <span id="showSex" class="showSex">0.00</span> Sex</p>
+		</d>
+		<d class="Money">
+			<p class="mainMoney" id="totalMoney">Money: 0</p>
+		</d>
+	
+		<d class="Multi">
+			<p class="sexMulti" id="sexMulti">Your Sex Multi: <span id="showMulti" class="showMulti">1x</span></p>
+		</d>
+
+
+	</div>
 </body>
 
 </html>
