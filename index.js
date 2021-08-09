@@ -13,7 +13,7 @@ function sellSex() {
     document.getElementById("totalMoney").innerHTML = totalMoney
 
 
-    var showSex = `You have this many Sex:  ${(sex -= sex).toFixed(2)}`;
+    var showSex = `You have this many Sex:  ${(sex -= 1).toFixed(2)}`;
     document.getElementById("showSex").innerHTML = showSex
     }
 }
