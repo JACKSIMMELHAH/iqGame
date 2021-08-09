@@ -8,7 +8,7 @@ function addSex() {
 }
 
 function sellSex() {
-    if (sex >= 1) {
+    if (sex >= 0.99) {
     var totalMoney = `Money:  ${(money += sex * 0.03).toFixed(2)}`;
     document.getElementById("totalMoney").innerHTML = totalMoney
 
