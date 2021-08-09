@@ -3,22 +3,22 @@ var money = 0;
 var sexMulti = 1;
 
 function addSex() {
-    var showSex = `You have this many Sex:  ${(Math.round(counter += 87 * sexMulti))}`;
+    var showSex = `You have this many Sex:  ${(counter += 0.1 * sexMulti).toFixed(1)}`;
     document.getElementById("showSex").innerHTML = showSex
 }
 
 function sellSex() {
-    var totalMoney = `Money:  ${(Math.round(money += counter * 10))}`;
+    var totalMoney = `Money:  ${(money += counter * 1.03).toFixed(2)}`;
     document.getElementById("totalMoney").innerHTML = totalMoney
 
 
-    var showSex = `You have this many Sex:  ${(Math.round(counter -= counter))}`;
+    var showSex = `You have this many Sex:  ${(counter -= counter).toFixed(2)}`;
     document.getElementById("showSex").innerHTML = showSex
 }
 
 function addSexMulti() {
-    if (money >= 10000) {
-        var totalMoney = `Money:  ${(Math.round(money -= 10000))}`;
+    if (money >= 0.05) {
+        var totalMoney = `Money:  ${(money -= 0.05).toFixed(2)}`;
         document.getElementById("totalMoney").innerHTML = totalMoney
 
 
