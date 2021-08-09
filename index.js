@@ -8,12 +8,14 @@ function addSex() {
 }
 
 function sellSex() {
+    if (sex >= 1) {
     var totalMoney = `Money:  ${(money += sex * 0.03).toFixed(2)}`;
     document.getElementById("totalMoney").innerHTML = totalMoney
 
 
     var showSex = `You have this many Sex:  ${(sex -= sex).toFixed(2)}`;
     document.getElementById("showSex").innerHTML = showSex
+    }
 }
 
 function addSexMulti() {
