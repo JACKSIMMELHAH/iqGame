@@ -28,7 +28,7 @@ function addSexMulti() {
         var showMulti = `Sex Multi:  ${(sexMulti += 0.1).toFixed(1)}x`;
         document.getElementById("showMulti").innerHTML = showMulti
 
-        var showCostMulti = costMulti += 0.1
+        var showCostMulti = costMulti += 0.025
         return showCostMulti
     } else return
 }
