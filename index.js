@@ -8,7 +8,7 @@ function addSex() {
 }
 
 function sellSex() {
-    var totalMoney = `Money:  ${(money += counter * 1.03).toFixed(2)}`;
+    var totalMoney = `Money:  ${(money += counter * 0.03).toFixed(2)}`;
     document.getElementById("totalMoney").innerHTML = totalMoney
 
 
