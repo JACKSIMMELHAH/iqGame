@@ -15,7 +15,7 @@ function sellSex() {
 
     var showSex = `You have this many Sex:  ${(sex -= 1).toFixed(2)}`;
     document.getElementById("showSex").innerHTML = showSex
-    }
+    } else return
 }
 
 function addSexMulti() {
