@@ -1,7 +1,7 @@
 var sex = 0;
 var money = 0;
 var sexMulti = 1;
-var costMulti = 0.025;
+var costMulti = 0.05;
 
 
 function addSex() {
