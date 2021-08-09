@@ -37,13 +37,28 @@ body {
   top: 20%;
 }
 
+.sellTheSex {
+  font-family : inherit;
+  font-size: 36px;
+  transition-duration: 0.4s;
+  border: rgb(112, 54, 54);
+  border-radius: 2px;
+  padding: 2%;
+  width: 80%;
+  background-color: rgb(112, 54, 54);
+}
+.sellTheSex:hover {
+  background-color: rgb(100, 100, 100);
+  color: black;
+}
+
 .addSex {
   font-family : inherit;
   font-size: 36px;
   transition-duration: 0.4s;
   border: rgb(29, 29, 29);
-  border-radius: 4px;
-  padding: 24px;
+  border-radius: 2px;
+  padding: 2%;
   width: 80%;
   background-color: rgb(71, 71, 71);
 }
@@ -52,27 +67,11 @@ body {
   color: black;
 }
 
-.sellSex {
-  font-family : inherit;
-  font-size: 36px;
-  transition-duration: 0.4s;
-  border: rgb(129, 63, 63);
-  border-radius: 30px;
-  padding: 10px;
-  width: 50%;
-  background-color: rgb(112, 52, 52);
-}
-.sellSex:hover {
-  background-color: rgb(100, 100, 100);
-  color: black;
-}
-
 
 .sexFooter {
   position: absolute;
   width: 50%;
-  height: 15%;
-  bottom: 0px;
+  top: 80%;
   right: 25%;
   left: 50%;
   margin-left: -20%;
@@ -80,12 +79,11 @@ body {
 
 .sellFooter {
   position: absolute;
-  width: 20%;
-  height: 95%;
-  bottom: 0px;
+  width: 50%;
+  top: 70%;
   right: 25%;
-  left: 110%;
-  margin-left: -50%;
+  left: 50%;
+  margin-left: -20%;
 }
 
 .addSexMulti {
@@ -96,7 +94,7 @@ body {
   font-size: 18px;
   transition-duration: 0.4s;
   border: rgb(129, 63, 63);
-  border-radius: 10px;
+  border-radius: 2px;
   background-color: rgb(112, 52, 52);
 }
 .addSexMulti:hover {
