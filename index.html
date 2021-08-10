@@ -9,39 +9,48 @@
 <body>
 
 	<div class="container">
-			
-				<p class="iqFooter">
-					<button class="addIq" onclick="addIq()">Get IQ</button>
-				</p>
-					
-				
-				
-				<p class="sellFooter">
-					<button class="sellIq" onclick="sellIq()">Sell IQ</button>
-				</p>
 
-
-
-				<p class="addMultiFooter">
-					<button class="addIqMulti" onclick="addIqMulti()">Buy IQ Multi</button>
-				</p>
-			
-
-
-
-
-
-		<d class="Iq">
-			<p class="iqMain" id="iqMain">You have <span id="showIq" class="showIq">0.00</span> IQ</p>
-		</d>
-		<d class="Money">
-			<p class="mainMoney" id="totalMoney">Money: 0</p>
-		</d>
-	
-		<d class="iqMulti">
-			<p class="iqShowMulti" id="iqShowMulti">IQ Multi: <span id="showIqMulti" class="showIqMulti">1x</span></p>
+		<d class="hideMainMenuButton">
+			<button id="hideMainMenuButton" onclick="showMenu()">Start!</button>
+			<p class="welcome" id="hideWelcome">Welcome to <span class ="rainbow">Intelligence Incremental! </span></p>
 		</d>
 
+
+		<d id="showMainMenu">
+
+			<d class="iqFooter">
+				<button class="addIq" onclick="addIq()">Get IQ</button>
+			</d>
+
+
+
+			<d class="sellFooter">
+				<button class="sellIq" onclick="sellIq()">Sell IQ</button>
+			</d>
+
+
+
+			<d class="addMultiFooter">
+				<button class="addIqMulti" onclick="addIqMulti()">Buy IQ Multi</button>
+			</d>
+
+
+
+
+
+
+			<d class="Iq">
+				<p class="iqMain" id="iqMain">You have <span id="showIq" class="showIq">0.00</span> IQ</p>
+			</d>
+			<d class="Money">
+				<p class="mainMoney" id="totalMoney">Money: 0</p>
+			</d>
+
+			<d class="iqMulti">
+				<p class="iqShowMulti" id="iqShowMulti">IQ Multi: <span id="showIqMulti" class="showIqMulti">1x</span>
+				</p>
+			</d>
+		</d>
 
 	</div>
 </body>

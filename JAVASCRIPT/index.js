@@ -3,6 +3,13 @@ var money = 0;
 var iqMulti = 1;
 var costMulti = 0.05;
 
+//---------------------------------------
+function showMenu() {
+        document.getElementById("showMainMenu").style = "display: block";
+        document.getElementById("hideMainMenuButton").style = "display: none";
+        document.getElementById("hideWelcome").style = "display: none";
+};
+//---------------------------------------
 
 function addIq() {
     var showIq = `${(iq += 0.1 * iqMulti).toFixed(2)}`;
@@ -33,3 +40,4 @@ function addIqMulti() {
     } else return
 }
 
+//---------------------------------------
