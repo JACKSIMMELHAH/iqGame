@@ -7,7 +7,7 @@ var costMulti = 0.05;
 function showMenu() {
         document.getElementById("showMainMenu").style = "display: block";
         document.getElementById("hideMainMenuButton").style = "display: none";
-        document.getElementById("hideWelcome").style = "display: none";
+        document.getElementById("hideMain").style = "display: none";
 };
 //---------------------------------------
 

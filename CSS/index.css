@@ -49,6 +49,9 @@ body {
   margin-left: -15%;
 }
 
+.version {
+  color: white;
+}
 .sellIq {
   font-family : inherit;
   font-size: 36px;
@@ -136,6 +139,10 @@ body {
 #showMainMenu {
   display: none;
   animation: fadeMenu 700ms ease-in-out both;
+}
+
+#hideMain {
+  display: block;
 }
 
 @keyframes fadeMenu {
