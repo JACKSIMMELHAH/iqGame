@@ -2,6 +2,7 @@ var iq = 0.00;
 var money = 0;
 var iqMulti = 1;
 var costMulti = 0.05;
+var minIq = 0.999999999;
 
 //---------------------------------------
 function showMenu() {
@@ -15,13 +16,12 @@ function addIq() {
     var showIq = `${(iq += 0.1 * iqMulti).toFixed(2)}`;
     document.getElementById("showIq").innerHTML = showIq
 }
-
 function sellIq() {
-    if (iq >= 0.999999999) {
-        var totalMoney = `Money:  ${(money += 1 * 0.03).toFixed(2)}`;
+    if (!(iq <= minIq)) {
+        var totalMoney = `Money:  ${(money += minIq * 0.03).toFixed(2)}`;
         document.getElementById("totalMoney").innerHTML = totalMoney
 
-        var showIq = `${(iq -= 0.999999999).toFixed(2)}`;
+        var showIq = `${(iq -= minIq).toFixed(2)}`;
         document.getElementById("showIq").innerHTML = showIq
     } else return
 }
