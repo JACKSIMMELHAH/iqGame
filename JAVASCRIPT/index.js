@@ -1,25 +1,32 @@
-var iq = 0.00;
+var iq = 0;
 var money = 0;
 var moneyPerSecond = 0;
 var iqMulti = 1;
 var costMulti = 0.05;
 var minIq = 0.999999999;
 
+
 //---------------------------------------
+
 function showMenu() {
-    document.getElementById("showMainMenu").style = "display: block";
     document.getElementById("hideMainMenuButton").style = "display: none";
     document.getElementById("hideMain").style = "display: none";
 };
+
 //---------------------------------------
+
 function jobs() {
     document.getElementById("wormsJob").style = "display: block"
 }
+
 //---------------------------------------
+
 function learn() {
     document.getElementById("wormsJob").style = "display: none"
 }
+
 //---------------------------------------
+
 function addIq() {
     var showIq = `${(iq += 0.1 * iqMulti).toFixed(2)}`;
     document.getElementById("showIq").innerHTML = showIq
@@ -49,13 +56,13 @@ function addIqMulti() {
 }
 
 function eatWorms() {
-    var moneyPerSeconds = `(${moneyPerSecond += 0.1}/s)`; 
+    var moneyPerSeconds = `(${(moneyPerSecond += 0.1).toFixed(2)}/s)`;
     var totalMoney = `${(money += moneyPerSecond).toFixed(2)}`;
-        document.getElementById("moneyPerSecond").innerHTML = moneyPerSeconds
-        document.getElementById("totalMoney").innerHTML = totalMoney
-        document.getElementById("wormsJob").disabled = true
+    document.getElementById("moneyPerSecond").innerHTML = moneyPerSeconds
+    document.getElementById("totalMoney").innerHTML = totalMoney
+    document.getElementById("wormsJob").disabled = true;
     setInterval(function eatWorms() {
-        var totalMoney = `${(money += moneyPerSecond).toFixed(2)}`; 
+        var totalMoney = `${(money += moneyPerSecond).toFixed(2)}`;
         document.getElementById("totalMoney").innerHTML = totalMoney
     }, 1000)
 };
