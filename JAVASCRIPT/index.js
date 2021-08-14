@@ -15,6 +15,10 @@ function jobs() {
     document.getElementById("wormsJob").style = "display: block"
 }
 //---------------------------------------
+function learn() {
+    document.getElementById("wormsJob").style = "display: none"
+}
+//---------------------------------------
 function addIq() {
     var showIq = `${(iq += 0.1 * iqMulti).toFixed(2)}`;
     document.getElementById("showIq").innerHTML = showIq
