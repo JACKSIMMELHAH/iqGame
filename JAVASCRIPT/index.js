@@ -37,7 +37,7 @@ function sellIq() {
 function addIqMulti() {
     if (money >= costMulti) {
 
-        var totalMoney = `Money:  ${(money -= costMulti).toFixed(2)}`;
+        var totalMoney = `${(money -= costMulti).toFixed(2)}`;
         document.getElementById("totalMoney").innerHTML = totalMoney
 
         var showIqMulti = `${(iqMulti += 0.1).toFixed(1)}x`;
@@ -50,14 +50,13 @@ function addIqMulti() {
 
 function eatWorms() {
     var moneyPerSeconds = `(${moneyPerSecond += 0.1}/s)`; 
-    var totalMoney = `Money:  ${(money += moneyPerSecond).toFixed(2)} (${moneyPerSecond}/s)`;
+    var totalMoney = `${(money += moneyPerSecond).toFixed(2)}`;
         document.getElementById("moneyPerSecond").innerHTML = moneyPerSeconds
         document.getElementById("totalMoney").innerHTML = totalMoney
         document.getElementById("wormsJob").disabled = true
     setInterval(function eatWorms() {
-        var totalMoney = `Money:  ${(money += moneyPerSecond).toFixed(2)} (${moneyPerSecond}/s)`; 
+        var totalMoney = `${(money += moneyPerSecond).toFixed(2)}`; 
         document.getElementById("totalMoney").innerHTML = totalMoney
-        document.getElementById("moneyPerSecond").innerHTML = moneyPerSeconds
     }, 1000)
 };
 

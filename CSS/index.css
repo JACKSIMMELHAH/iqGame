@@ -113,6 +113,10 @@ body {
 .Money {
   text-align: center;
 }
+#totalMoney {
+  color: white;
+}
+
 
 .showIq {
     font-size: 32px;
