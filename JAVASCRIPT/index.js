@@ -47,4 +47,11 @@ function addIqMulti() {
     } else return
 }
 
+function eatWorms() {
+    setInterval(function eatWorms() {
+        var totalMoney = `Money:  ${(money += 0.1).toFixed(2)}`;
+        document.getElementById("totalMoney").innerHTML = totalMoney
+    }, 1000)
+};
+
 //---------------------------------------
