@@ -21,7 +21,7 @@ function sellIq() {
         var totalMoney = `Money:  ${(money += minIq * 0.03).toFixed(2)}`;
         document.getElementById("totalMoney").innerHTML = totalMoney
 
-        var showIq = `${(iq -= minIq).toFixed(0)}`;
+        var showIq = `${(iq -= minIq).toFixed(1)}`;
         document.getElementById("showIq").innerHTML = showIq
     } else return
 }
