@@ -1,5 +1,6 @@
 var iq = 0.00;
 var money = 0;
+var moneyPerSecond = 0;
 var iqMulti = 1;
 var costMulti = 0.05;
 var minIq = 0.999999999;
@@ -48,12 +49,15 @@ function addIqMulti() {
 }
 
 function eatWorms() {
-    var totalMoney = `Money:  ${(money += 0.1).toFixed(2)}`;
+    var moneyPerSeconds = `(${moneyPerSecond += 0.1}/s)`; 
+    var totalMoney = `Money:  ${(money += moneyPerSecond).toFixed(2)} (${moneyPerSecond}/s)`;
+        document.getElementById("moneyPerSecond").innerHTML = moneyPerSeconds
         document.getElementById("totalMoney").innerHTML = totalMoney
         document.getElementById("wormsJob").disabled = true
     setInterval(function eatWorms() {
-        var totalMoney = `Money:  ${(money += 0.1).toFixed(2)}`;
+        var totalMoney = `Money:  ${(money += moneyPerSecond).toFixed(2)} (${moneyPerSecond}/s)`; 
         document.getElementById("totalMoney").innerHTML = totalMoney
+        document.getElementById("moneyPerSecond").innerHTML = moneyPerSeconds
     }, 1000)
 };
 
