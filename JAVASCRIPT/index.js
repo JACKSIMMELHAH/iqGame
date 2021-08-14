@@ -13,7 +13,7 @@ function showMenu() {
 //---------------------------------------
 
 function addIq() {
-    var showIq = `${(iq += 0.1 * iqMulti).toFixed(1)}`;
+    var showIq = `${(iq += 0.1 * iqMulti).toFixed(2)}`;
     document.getElementById("showIq").innerHTML = showIq
 }
 function sellIq() {
@@ -21,7 +21,7 @@ function sellIq() {
         var totalMoney = `Money:  ${(money += minIq * 0.03).toFixed(2)}`;
         document.getElementById("totalMoney").innerHTML = totalMoney
 
-        var showIq = `${(iq -= minIq).toFixed(1)}`;
+        var showIq = `${(iq -= minIq).toFixed(2)}`;
         document.getElementById("showIq").innerHTML = showIq
     } else return
 }
