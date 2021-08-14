@@ -6,12 +6,15 @@ var minIq = 0.999999999;
 
 //---------------------------------------
 function showMenu() {
-        document.getElementById("showMainMenu").style = "display: block";
-        document.getElementById("hideMainMenuButton").style = "display: none";
-        document.getElementById("hideMain").style = "display: none";
+    document.getElementById("showMainMenu").style = "display: block";
+    document.getElementById("hideMainMenuButton").style = "display: none";
+    document.getElementById("hideMain").style = "display: none";
 };
 //---------------------------------------
-
+function jobs() {
+    document.getElementById("wormsJob").style = "display: block"
+}
+//---------------------------------------
 function addIq() {
     var showIq = `${(iq += 0.1 * iqMulti).toFixed(2)}`;
     document.getElementById("showIq").innerHTML = showIq

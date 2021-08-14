@@ -15,6 +15,51 @@ body {
     font-family: Typewriter;
 }
 
+
+.jobs {
+  font: inherit;
+  font-weight: bold;
+  color: white;
+  border: 2px solid rgb(142, 235, 142);
+  background-color: rgb(29, 29, 29);
+  transition-duration: 0.4s;
+  position: absolute;
+  height: 5%;
+  width: 7%;
+  top: 20%;
+  left: 20%;
+}
+.jobs:hover {
+  background-color: rgb(142, 235, 142); 
+}
+
+#wormsJob {
+  display: none;
+  font: inherit;
+  border: rgb(29, 29, 29);
+  border-radius: 2px;
+  background-color: rgb(100, 100, 100);
+  position: absolute;
+  height: 5%;
+  width: 5%;
+  top: 35%;
+  left: 20%;
+}
+#wormsJob:hover + .wormsJob{
+  display: block;
+}
+.wormsJob {
+  display: none;
+  font: inherit;
+  color: white;
+  border: 2px solid rgb(142, 235, 142);
+  border-radius: 2px;
+  background-color: rgb(29, 29, 29);
+  position: absolute;
+  height: 5%;
+  top: 32%;
+  left: 25%;
+}
 .center {
   text-align: center;
 }
@@ -40,6 +85,7 @@ body {
 .iqMulti {
   position: absolute;
   top: 20%;
+  display: none;
 }
 
 .welcome {
@@ -50,8 +96,10 @@ body {
 }
 
 .version {
+  position: absolute;
   color: white;
 }
+
 .sellIq {
   font-family : inherit;
   font-size: 36px;
@@ -111,6 +159,7 @@ body {
   border: rgb(129, 63, 63);
   border-radius: 2px;
   background-color: rgb(112, 52, 52);
+  display: none;
 }
 .addIqMulti:hover {
   background-color: rgb(100, 100, 100);
