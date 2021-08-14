@@ -50,6 +50,7 @@ function addIqMulti() {
 function eatWorms() {
     var totalMoney = `Money:  ${(money += 0.1).toFixed(2)}`;
         document.getElementById("totalMoney").innerHTML = totalMoney
+        document.getElementById("wormsJob").disabled = true
     setInterval(function eatWorms() {
         var totalMoney = `Money:  ${(money += 0.1).toFixed(2)}`;
         document.getElementById("totalMoney").innerHTML = totalMoney
