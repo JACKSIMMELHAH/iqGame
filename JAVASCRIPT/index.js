@@ -48,6 +48,8 @@ function addIqMulti() {
 }
 
 function eatWorms() {
+    var totalMoney = `Money:  ${(money += 0.1).toFixed(2)}`;
+        document.getElementById("totalMoney").innerHTML = totalMoney
     setInterval(function eatWorms() {
         var totalMoney = `Money:  ${(money += 0.1).toFixed(2)}`;
         document.getElementById("totalMoney").innerHTML = totalMoney
