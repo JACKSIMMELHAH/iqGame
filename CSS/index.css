@@ -121,16 +121,30 @@ body {
   font-family : inherit;
   font-size: 36px;
   transition-duration: 0.4s;
+  background-color: rgb(29, 29, 29);
+  color: rgb(100, 100, 100);
   border: rgb(29, 29, 29);
   border-radius: 2px;
   padding: 2%;
-  background-color: rgb(112, 52, 52);
   position: absolute;
   width: 30%;
   top: 60%;
   left: 50%;
   margin-left: -15%;
 }
+#start {
+  font-family : inherit;
+  font-size: 36px;
+  transition-duration: 0.4s;
+  background-color: rgb(112, 52, 52);
+  border: rgb(129, 63, 63);
+  border-radius: 2px;
+  position: absolute;
+  width: 99.5%;
+  height: 98.3%;
+  opacity: 0%;
+}
+
 #hideMainMenuButton:hover {
   background-color: rgb(100, 100, 100);
   color: black;
