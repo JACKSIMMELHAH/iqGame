@@ -42,9 +42,7 @@ body {
 .jobs:hover {
   background-color: rgb(142, 235, 142); 
 }
-.jobs:focus {
-  background-color: rgb(142, 235, 142);
-}
+
 
 .learn {
   font: inherit;

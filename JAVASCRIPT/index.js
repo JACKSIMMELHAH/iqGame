@@ -15,13 +15,17 @@ function showMenu() {
 //---------------------------------------
 
 function jobs() {
-    document.getElementById("btn1").style = "display: block"
+    document.getElementById("btn1").style = "display: block";
+    document.getElementById("job").style.background='rgb(142, 235, 142)';
+    document.getElementById("learning").style.background='rgb(29, 29, 29)';
 }
 
 //---------------------------------------
 
 function learn() {
     document.getElementById("btn1").style = "display: none"
+    document.getElementById("learning").style.background='rgb(240, 128, 128)';
+    document.getElementById("job").style.background='rgb(29, 29, 29)';
 }
 
 //---------------------------------------
@@ -71,19 +75,7 @@ function eatWorms() {
     }, 1000)
 };
 
-/*function save() {
-    var testObject = { 
-        'money': money.toFixed(2),
-        'moneyPerSecond': moneyPerSecond.toFixed(2), 
-    };
 
-    localStorage.setItem('testObject', JSON.stringify(testObject));
-
-    var retrievedObject = localStorage.getItem('testObject');
-
-    console.log('retrievedObject: ', JSON.parse(retrievedObject));
-    
-} */
 
 function saveGame() {
     localStorage.setItem('save', JSON.stringify("save"));
