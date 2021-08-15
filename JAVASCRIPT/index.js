@@ -1,5 +1,5 @@
 var iq = 0;
-var money = 0;
+var money = -0.1;
 var moneyPerSecond = 0;
 var iqMulti = 1;
 var costMulti = 0.05;
@@ -73,7 +73,7 @@ function eatWorms() {
         document.getElementById("owning").innerHTML = owning
     }
     setInterval(function eatWorms() {
-        var totalMoney = ` ${(money += moneyPerSecond / 10).toFixed(2)}`;
+        var totalMoney = ` ${(money +=  moneyPerSecond / 10).toFixed(2)}`;
         document.getElementById("totalMoney").innerHTML = totalMoney
     }, 100)
 };
