@@ -71,16 +71,31 @@ function eatWorms() {
     }, 1000)
 };
 
-function save(){
-var testObject = { 'money': money.toFixed(2), 'moneyPerSecond': moneyPerSecond.toFixed(2) };
+/*function save() {
+    var testObject = { 
+        'money': money.toFixed(2),
+        'moneyPerSecond': moneyPerSecond.toFixed(2), 
+    };
 
-localStorage.setItem('testObject', JSON.stringify(testObject));
+    localStorage.setItem('testObject', JSON.stringify(testObject));
 
-var retrievedObject = localStorage.getItem('testObject');
+    var retrievedObject = localStorage.getItem('testObject');
 
-console.log('retrievedObject: ', JSON.parse(retrievedObject));
+    console.log('retrievedObject: ', JSON.parse(retrievedObject));
+    
+} */
+
+function saveGame() {
+    localStorage.setItem('money', JSON.stringify(money));
+    localStorage.setItem('moneyPerSecond', JSON.stringify(moneyPerSecond));
+  }
+
+function loadGame() {
+    money = JSON.parse(localStorage.getItem('money'));
+    moneyPerSecond = JSON.parse(localStorage.getItem('moneyPerSecond'));
 }
-
-
+function clearGame() {
+    localStorage.clear();
+}
 
 //---------------------------------------

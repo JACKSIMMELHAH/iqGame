@@ -6,11 +6,9 @@
 	<script src="JAVASCRIPT\index.js"></script>
 </head>
 
-<body onload="">
+<body onload="clearGame()">
 
 	<div class="container">
-		<button onclick="save()">Save</button>
-		<button onclick="load()">Load</button>
 		<!-- Start menu disabled
 			<d class="hideMainMenuButton">
 			<button id="hideMainMenuButton" onclick="showMenu()">Click anywhere to start!</button>
@@ -43,6 +41,8 @@
 		<d id="learn">
 			<button class="learn" onclick="learn()" tabindex="1">Learn</button>
 		</d>
+		<button onclick="saveGame()">Save</button>
+		<button onclick="loadGame()">Load</button>
 		<p class="version">version: alpha</p>
 		<p class="iqMain" id="iqMain">You have <span id="showIq" class="showIq">0.00</span> IQ</p>
 		</d>
@@ -60,7 +60,6 @@
 			<button class="addIqMulti" onclick="addIqMulti()">Buy IQ Multi</button>
 		</d>
 		-->
-
 		</d>
 
 	</div>
