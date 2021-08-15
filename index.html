@@ -6,10 +6,11 @@
 	<script src="JAVASCRIPT\index.js"></script>
 </head>
 
-<body>
+<body onload="">
 
 	<div class="container">
-
+		<button onclick="save()">Save</button>
+		<button onclick="load()">Load</button>
 		<!-- Start menu disabled
 			<d class="hideMainMenuButton">
 			<button id="hideMainMenuButton" onclick="showMenu()">Click anywhere to start!</button>
@@ -34,13 +35,13 @@
 		-->
 		<d id="tabs"></d>
 		<d id="jobs">
-			<button class="jobs" onclick="jobs()">Jobs</button>
-			<button id="wormsJob" onclick="eatWorms()">Eat worms</button>
-			<button class="wormsJob"> Gain 0.10 money/s by eating your neighbors worms. </button>
+			<button class="jobs" onclick="jobs()" tabindex="1">Jobs</button>
+			<button id="btn1" class="btn" onclick="eatWorms()">Eat worms <br><span id="owning">(not owned)</span></button>
+			<button class="wormsJob">Enjoy the taste of dirt.</button>
 		</d>
 
 		<d id="learn">
-			<button class="learn" onclick="learn()">Learn</button>
+			<button class="learn" onclick="learn()" tabindex="1">Learn</button>
 		</d>
 		<p class="version">version: alpha</p>
 		<p class="iqMain" id="iqMain">You have <span id="showIq" class="showIq">0.00</span> IQ</p>

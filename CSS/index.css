@@ -42,8 +42,31 @@ body {
 .jobs:hover {
   background-color: rgb(142, 235, 142); 
 }
+.jobs:focus {
+  background-color: rgb(142, 235, 142);
+}
 
-#wormsJob {
+.learn {
+  font: inherit;
+  font-weight: bold;
+  color: white;
+  border: 2px solid rgb(240, 128, 128);
+  background-color: rgb(29, 29, 29);
+  transition-duration: 0.4s;
+  position: absolute;
+  height: 6%;
+  width: 8%;
+  top: 20%;
+  left: 20%;
+}
+.learn:hover {
+background-color: rgb(240, 128, 128);
+}
+.learn:focus {
+  background-color: rgb(240, 128, 128);
+}
+
+#btn1 {
   display: none;
   font: inherit;
   font-size: 24px;
@@ -56,7 +79,7 @@ body {
   top: 35%;
   left: 9.25%;
 }
-#wormsJob:hover + .wormsJob{
+#btn1:hover + .wormsJob{
   display: block;
 }
 .wormsJob {
@@ -85,23 +108,14 @@ body {
   left: 16.6%;
   z-index: 1;
 }
+#btn1:disabled {
+  color: grey;
+}
 
-.learn {
-    font: inherit;
-    font-weight: bold;
-    color: white;
-    border: 2px solid rgb(240, 128, 128);
-    background-color: rgb(29, 29, 29);
-    transition-duration: 0.4s;
-    position: absolute;
-    height: 6%;
-    width: 8%;
-    top: 20%;
-    left: 20%;
+#owning {
+  font-size: 12px;
 }
-.learn:hover {
-  background-color: rgb(240, 128, 128);
-}
+
 .center {
   text-align: center;
 }
