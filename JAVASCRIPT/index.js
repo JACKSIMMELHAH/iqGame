@@ -66,7 +66,7 @@ function eatWorms() {
         document.getElementById("owning").innerHTML = owning
     }
     setInterval(function eatWorms() {
-        var totalMoney = `${(money += moneyPerSecond).toFixed(2)}`;
+        var totalMoney = ` ${(money += moneyPerSecond).toFixed(2)}`;
         document.getElementById("totalMoney").innerHTML = totalMoney
     }, 1000)
 };
@@ -86,16 +86,25 @@ function eatWorms() {
 } */
 
 function saveGame() {
+    localStorage.setItem('save', JSON.stringify("save"));
     localStorage.setItem('money', JSON.stringify(money));
     localStorage.setItem('moneyPerSecond', JSON.stringify(moneyPerSecond));
+
   }
 
+
+
 function loadGame() {
+    if(!localStorage.getItem('save')) {
+        return alert("You don't have a savefile!");
+    } else
     money = JSON.parse(localStorage.getItem('money'));
     moneyPerSecond = JSON.parse(localStorage.getItem('moneyPerSecond'));
 }
 function clearGame() {
-    localStorage.clear();
+    localStorage.removeItem("money");
+    localStorage.removeItem("moneyPerSecond");
+    localStorage.removeItem("save");
 }
 
 //---------------------------------------
