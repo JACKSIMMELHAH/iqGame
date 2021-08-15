@@ -5,6 +5,33 @@ var iqMulti = 1;
 var costMulti = 0.05;
 var minIq = 0.999999999;
 
+
+
+function saveGame() {
+    localStorage.setItem('save', JSON.stringify("save"));
+    localStorage.setItem('money', JSON.stringify(money));
+    localStorage.setItem('moneyPerSecond', JSON.stringify(moneyPerSecond));
+
+  }
+
+function loadGame() {
+    if(!localStorage.getItem('save')) {
+        return alert("You don't have a savefile!");
+    } else
+   money = JSON.parse(localStorage.getItem('money'));
+   moneyPerSecond = JSON.parse(localStorage.getItem('moneyPerSecond'));
+
+}
+
+function clearGame() {
+    localStorage.removeItem("money");
+    localStorage.removeItem("moneyPerSecond");
+    localStorage.removeItem("save");
+    resetBtnState(btns)
+    
+}
+
+
 //---------------------------------------
 
 function showMenu() {
@@ -16,16 +43,16 @@ function showMenu() {
 
 function jobs() {
     document.getElementById("btn1").style = "display: block";
-    document.getElementById("job").style.background='rgb(142, 235, 142)';
-    document.getElementById("learning").style.background='rgb(29, 29, 29)';
+    document.getElementById("job").style.background = 'rgb(142, 235, 142)';
+    document.getElementById("learning").style.background = 'rgb(29, 29, 29)';
 }
 
 //---------------------------------------
 
 function learn() {
     document.getElementById("btn1").style = "display: none"
-    document.getElementById("learning").style.background='rgb(240, 128, 128)';
-    document.getElementById("job").style.background='rgb(29, 29, 29)';
+    document.getElementById("learning").style.background = 'rgb(240, 128, 128)';
+    document.getElementById("job").style.background = 'rgb(29, 29, 29)';
 }
 
 //---------------------------------------
@@ -64,39 +91,63 @@ function eatWorms() {
     var wormsJob = document.getElementById("btn1");
     document.getElementById("moneyPerSecond").innerHTML = moneyPerSeconds
     document.getElementById("totalMoney").innerHTML = totalMoney
-    var wormsJob = document.getElementById("btn1").disabled = true;
+
     if (wormsJob.disabled = true) {
         var owning = `(owned)`
         document.getElementById("owning").innerHTML = owning
     }
     setInterval(function eatWorms() {
-        var totalMoney = ` ${(money += moneyPerSecond).toFixed(2)}`;
+        var totalMoney = ` ${(money += moneyPerSecond / 10).toFixed(2)}`;
         document.getElementById("totalMoney").innerHTML = totalMoney
-    }, 1000)
+    }, 100)
 };
 
 
 
-function saveGame() {
-    localStorage.setItem('save', JSON.stringify("save"));
-    localStorage.setItem('money', JSON.stringify(money));
-    localStorage.setItem('moneyPerSecond', JSON.stringify(moneyPerSecond));
-
-  }
 
 
 
-function loadGame() {
-    if(!localStorage.getItem('save')) {
-        return alert("You don't have a savefile!");
-    } else
-    money = JSON.parse(localStorage.getItem('money'));
-    moneyPerSecond = JSON.parse(localStorage.getItem('moneyPerSecond'));
-}
-function clearGame() {
-    localStorage.removeItem("money");
-    localStorage.removeItem("moneyPerSecond");
-    localStorage.removeItem("save");
-}
+
+
+
+
+
+
+
+//---------------------------------------
+
+const btns = document.querySelectorAll('.btn');
+
+const getBtnState = function (btns) {
+    [].forEach.call(btns, function (btn) {
+        if (window.localStorage.getItem(btn.id) == 'disabled') {
+            btn.disabled = true
+        var owning = `(owned)`
+        document.getElementById("owning").innerHTML = owning
+        }
+    })
+};
+
+const resetBtnState = function (btns) {
+    [].forEach.call(btns, function (btn) {
+        btn.disabled = false
+        window.localStorage.setItem(btn.id, '')
+    })
+};
+
+[].forEach.call(btns, function (btn) {
+    btn.addEventListener('click', function (e) {
+        btn.disabled = true
+        window.localStorage.setItem(btn.id, 'disabled')
+    })
+});
+
+/*document.getElementById('reset').addEventListener('click', function (e) {
+  resetBtnState(btns) 
+}); */
+
+getBtnState(btns);
+
+
 
 //---------------------------------------

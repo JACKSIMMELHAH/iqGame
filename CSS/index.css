@@ -60,9 +60,7 @@ body {
 .learn:hover {
 background-color: rgb(240, 128, 128);
 }
-.learn:focus {
-  background-color: rgb(240, 128, 128);
-}
+
 
 #btn1 {
   display: none;
@@ -224,47 +222,6 @@ background-color: rgb(240, 128, 128);
   color: black;
 }
 
-#hideMainMenuButton {
-  font-family : inherit;
-  font-size: 36px;
-  transition-duration: 0.4s;
-  background-color: rgb(29, 29, 29);
-  color: rgb(100, 100, 100);
-  border: rgb(29, 29, 29);
-  border-radius: 2px;
-  padding: 2%;
-  position: absolute;
-  width: 30%;
-  top: 60%;
-  left: 50%;
-  margin-left: -15%;
-}
-#start {
-  font-family : inherit;
-  font-size: 36px;
-  transition-duration: 0.4s;
-  background-color: rgb(112, 52, 52);
-  border: rgb(129, 63, 63);
-  border-radius: 2px;
-  position: absolute;
-  width: 99.5%;
-  height: 98.3%;
-  opacity: 0%;
-}
-
-#hideMainMenuButton:hover {
-  background-color: rgb(100, 100, 100);
-  color: black;
-}
-
-#showMainMenu {
-  display: none;
-  animation: fadeMenu 700ms ease-in-out both;
-}
-
-#hideMain {
-  display: block;
-}
 
 @keyframes fadeMenu {
   from {opacity: 0;}
