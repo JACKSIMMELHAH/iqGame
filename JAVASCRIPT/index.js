@@ -7,30 +7,6 @@ var minIq = 0.999999999;
 
 
 
-function saveGame() {
-    localStorage.setItem('save', JSON.stringify("save"));
-    localStorage.setItem('money', JSON.stringify(money));
-    localStorage.setItem('moneyPerSecond', JSON.stringify(moneyPerSecond));
-
-  }
-
-function loadGame() {
-    if(!localStorage.getItem('save')) {
-        return alert("You don't have a savefile!");
-    } else
-   money = JSON.parse(localStorage.getItem('money'));
-   moneyPerSecond = JSON.parse(localStorage.getItem('moneyPerSecond'));
-
-}
-
-function clearGame() {
-    localStorage.removeItem("money");
-    localStorage.removeItem("moneyPerSecond");
-    localStorage.removeItem("save");
-    resetBtnState(btns)
-    
-}
-
 
 //---------------------------------------
 
@@ -104,12 +80,29 @@ function eatWorms() {
 
 
 
+function saveGame() {
+    localStorage.setItem('save', JSON.stringify("save"));
+    localStorage.setItem('money', JSON.stringify(money));
+    localStorage.setItem('moneyPerSecond', JSON.stringify(moneyPerSecond));
 
+  }
 
+function loadGame() {
+    if(!localStorage.getItem('save')) {
+        return alert("You don't have a savefile!");
+    } else
+   money = JSON.parse(localStorage.getItem('money'));
+   moneyPerSecond = JSON.parse(localStorage.getItem('moneyPerSecond'));
 
+}
 
-
-
+function clearGame() {
+    localStorage.removeItem("money");
+    localStorage.removeItem("moneyPerSecond");
+    localStorage.removeItem("save");
+    resetBtnState(btns)
+    
+}
 
 
 
@@ -122,8 +115,7 @@ const getBtnState = function (btns) {
     [].forEach.call(btns, function (btn) {
         if (window.localStorage.getItem(btn.id) == 'disabled') {
             btn.disabled = true
-        var owning = `(owned)`
-        document.getElementById("owning").innerHTML = owning
+        
         }
     })
 };
