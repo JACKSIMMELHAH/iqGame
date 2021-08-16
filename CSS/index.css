@@ -105,7 +105,6 @@ background-color: rgb(240, 128, 128);
   height: 5%;
   top: 32%;
   left: 16.6%;
-  z-index: 1;
 }
 .wormsJob:hover {
   display: block;
@@ -118,11 +117,65 @@ background-color: rgb(240, 128, 128);
   height: 5%;
   top: 32%;
   left: 16.6%;
-  z-index: 1;
 }
 #btn1:disabled {
   color: grey;
 }
+.wormsReq {
+  color: white;
+  display: none;
+  position: absolute;
+  top: 43%;
+  left: 9.7%;
+}
+#btn2 {
+  display: none;
+  font: inherit;
+  font-size: 23px;
+  color: white;
+  border: 2px solid rgb(240, 128, 128);
+  background-color: rgb(29, 29, 29);
+  position: absolute;
+  height: 8%;
+  width: 9.5%;
+  top: 35%;
+  left: 9.25%;
+}
+#btn2:hover + .learnRead{
+  display: block;
+}
+.learnRead {
+  display: none;
+  font: inherit;
+  color: white;
+  border: 2px solid rgb(240, 128, 128);
+  border-radius: 2px;
+  background-color: rgb(29, 29, 29);
+  position: absolute;
+  height: 5%;
+  top: 32%;
+  left: 16.6%;
+}
+.learnRead:hover {
+  display: block;
+  font: inherit;
+  color: white;
+  border: 2px solid rgb(240, 128, 128);
+  border-radius: 2px;
+  background-color: rgb(29, 29, 29);
+  position: absolute;
+  height: 5%;
+  top: 32%;
+  left: 16.6%;
+}
+.readReq {
+  color: white;
+  display: none;
+  position: absolute;
+  top: 43%;
+  left: 9.7%;
+}
+
 
 #owning {
   font-size: 12px;

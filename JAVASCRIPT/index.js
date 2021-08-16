@@ -5,7 +5,9 @@ var iqMulti = 1;
 var costMulti = 0.05;
 var minIq = 0.999999999;
 var tickSpeed = 100;
-
+var wormPS = 0.1
+var readIq = 1
+var readProcress = 0
 
 
 //---------------------------------------
@@ -18,7 +20,10 @@ function showMenu() {
 //---------------------------------------
 
 function jobs() {
-    document.getElementById("btn1").style = "display: block";
+    document.getElementById("wormsReq").style = "display: block"
+    document.getElementById("btn1").style = "display: block"
+    document.getElementById("readReq").style = "display: none"
+    document.getElementById("btn2").style = "display: none"
     document.getElementById("job").style.background = 'rgb(142, 235, 142)';
     document.getElementById("learning").style.background = 'rgb(29, 29, 29)';
     document.getElementById("settings").style.background = 'rgb(29, 29, 29)';
@@ -27,6 +32,9 @@ function jobs() {
 //---------------------------------------
 
 function learn() {
+    document.getElementById("btn2").style = "display: block"
+    document.getElementById("readReq").style = "display: block"
+    document.getElementById("wormsReq").style = "display: none"
     document.getElementById("btn1").style = "display: none"
     document.getElementById("learning").style.background = 'rgb(240, 128, 128)';
     document.getElementById("job").style.background = 'rgb(29, 29, 29)';
@@ -36,12 +44,22 @@ function learn() {
 //---------------------------------------
 
 function settings() {
+    document.getElementById("wormsReq").style = "display: none"
+    document.getElementById("readReq").style = "display: none"
     document.getElementById("btn1").style = "display: none"
+    document.getElementById("btn2").style = "display: none"
     document.getElementById("job").style.background = 'rgb(29, 29, 29)';
     document.getElementById("learning").style.background = 'rgb(29, 29, 29)';
     document.getElementById("settings").style.background = 'rgb(95, 95, 95)';
 }
 
+//---------------------------------------
+
+var wormPerSecond = `Gain ${(wormPS).toFixed(2)} money/s`;
+document.getElementById("wormsPS").innerHTML = wormPerSecond
+
+var readReq = `Gain ${(readIq).toFixed(2)} IQ`
+document.getElementById("readIq").innerHTML = readReq
 //---------------------------------------
 
 function addIq() {
@@ -73,22 +91,45 @@ function addIqMulti() {
 }
 
 function eatWorms() {
-    var moneyPerSeconds = `(${(moneyPerSecond += 0.1).toFixed(2)}/s)`;
+    var moneyPerSeconds = `(${(moneyPerSecond += wormPS).toFixed(2)}/s)`;
     var totalMoney = `${(money += moneyPerSecond).toFixed(2)}`;
     var wormsJob = document.getElementById("btn1");
     document.getElementById("totalMoney").innerHTML = totalMoney
     document.getElementById("moneyPerSecond").innerHTML = moneyPerSeconds
 
+    setInterval(function eatWorms() {
+        var totalMoney = `${(money += moneyPerSecond / 10).toFixed(2)}`;
+        document.getElementById("totalMoney").innerHTML = totalMoney
+    }, tickSpeed)
+
     if (wormsJob.disabled = true) {
         var owning = `(owned)`
         document.getElementById("owning").innerHTML = owning
     }
-    setInterval(function eatWorms() {
-        var totalMoney = ` ${(money += moneyPerSecond / 10).toFixed(2)}`;
-        document.getElementById("totalMoney").innerHTML = totalMoney
-    }, tickSpeed)
+
 };
 
+
+function learnReading() {
+    if (money >= 1) {
+        var showIq = `${iq += 1}`
+        var totalMoney = ` ${(money -= 1).toFixed(2)}`
+        var readingProcress = `${readProcress += 1}/5` 
+        var learnRead = document.getElementById("btn2");
+        document.getElementById("showIq").innerHTML = showIq
+        document.getElementById("totalMoney").innerHTML = totalMoney
+        document.getElementById("readingProcress").innerHTML = readingProcress
+
+        if (readProcress >= 5) {
+            document.getElementById("btn2").disabled = true
+        }
+
+        if (learnRead.disabled == true) {
+            document.getElementById("btn2").style.color = "grey"
+        }
+    }
+
+}
 
 
 function saveGame() {
