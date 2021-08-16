@@ -4,7 +4,7 @@ var moneyPerSecond = 0;
 var iqMulti = 1;
 var costMulti = 0.05;
 var minIq = 0.999999999;
-
+var tickSpeed = 100;
 
 
 
@@ -21,6 +21,7 @@ function jobs() {
     document.getElementById("btn1").style = "display: block";
     document.getElementById("job").style.background = 'rgb(142, 235, 142)';
     document.getElementById("learning").style.background = 'rgb(29, 29, 29)';
+    document.getElementById("settings").style.background = 'rgb(29, 29, 29)';
 }
 
 //---------------------------------------
@@ -29,6 +30,16 @@ function learn() {
     document.getElementById("btn1").style = "display: none"
     document.getElementById("learning").style.background = 'rgb(240, 128, 128)';
     document.getElementById("job").style.background = 'rgb(29, 29, 29)';
+    document.getElementById("settings").style.background = 'rgb(29, 29, 29)';
+}
+
+//---------------------------------------
+
+function settings() {
+    document.getElementById("btn1").style = "display: none"
+    document.getElementById("job").style.background = 'rgb(29, 29, 29)';
+    document.getElementById("learning").style.background = 'rgb(29, 29, 29)';
+    document.getElementById("settings").style.background = 'rgb(95, 95, 95)';
 }
 
 //---------------------------------------
@@ -65,17 +76,17 @@ function eatWorms() {
     var moneyPerSeconds = `(${(moneyPerSecond += 0.1).toFixed(2)}/s)`;
     var totalMoney = `${(money += moneyPerSecond).toFixed(2)}`;
     var wormsJob = document.getElementById("btn1");
-    document.getElementById("moneyPerSecond").innerHTML = moneyPerSeconds
     document.getElementById("totalMoney").innerHTML = totalMoney
+    document.getElementById("moneyPerSecond").innerHTML = moneyPerSeconds
 
     if (wormsJob.disabled = true) {
         var owning = `(owned)`
         document.getElementById("owning").innerHTML = owning
     }
     setInterval(function eatWorms() {
-        var totalMoney = ` ${(money +=  moneyPerSecond / 10).toFixed(2)}`;
+        var totalMoney = ` ${(money += moneyPerSecond / 10).toFixed(2)}`;
         document.getElementById("totalMoney").innerHTML = totalMoney
-    }, 100)
+    }, tickSpeed)
 };
 
 
@@ -85,14 +96,14 @@ function saveGame() {
     localStorage.setItem('money', JSON.stringify(money));
     localStorage.setItem('moneyPerSecond', JSON.stringify(moneyPerSecond));
 
-  }
+}
 
 function loadGame() {
-    if(!localStorage.getItem('save')) {
+    if (!localStorage.getItem('save')) {
         return alert("You don't have a savefile!");
     } else
-   money = JSON.parse(localStorage.getItem('money'));
-   moneyPerSecond = JSON.parse(localStorage.getItem('moneyPerSecond'));
+        money = JSON.parse(localStorage.getItem('money'));
+    moneyPerSecond = JSON.parse(localStorage.getItem('moneyPerSecond'));
 
 }
 
@@ -101,7 +112,7 @@ function clearGame() {
     localStorage.removeItem("moneyPerSecond");
     localStorage.removeItem("save");
     resetBtnState(btns)
-    
+
 }
 
 
@@ -115,7 +126,7 @@ const getBtnState = function (btns) {
     [].forEach.call(btns, function (btn) {
         if (window.localStorage.getItem(btn.id) == 'disabled') {
             btn.disabled = true
-        
+
         }
     })
 };

@@ -5,7 +5,7 @@
 
 
 body {
-    background-color: rgb(29, 29, 29);
+  background-color: rgb(29, 29, 29);
 }
 
 .container {
@@ -61,6 +61,22 @@ body {
 background-color: rgb(240, 128, 128);
 }
 
+.settings {
+  font: inherit;
+  font-weight: bold;
+  color: white;
+  border: 2px solid rgb(95, 95, 95);
+  background-color: rgb(29, 29, 29);
+  transition-duration: 0.4s;
+  position: absolute;
+  height: 6%;
+  width: 8%;
+  top: 20%;
+  left: 80%;
+}
+.settings:hover {
+  background-color: rgb(95, 95, 95);
+}
 
 #btn1 {
   display: none;
@@ -243,5 +259,23 @@ background-color: rgb(240, 128, 128);
     }
     100% {
       color: #6666ff;
+    }
+  }
+
+  @keyframes colorRotateBackGround {
+    from {
+      background-color: #6666ff;
+    }
+    10% {
+      background-color: #0099ff;
+    }
+    50% {
+      background-color: #00ff00;
+    }
+    75% {
+      background-color: #ff3399;
+    }
+    100% {
+      background-color: #6666ff;
     }
   }
