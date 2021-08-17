@@ -143,6 +143,8 @@ background-color: rgb(240, 128, 128);
 #btn2:hover + .selfAware{
   display: block;
 }
+
+
 .selfAware {
   display: none;
   font: inherit;
@@ -155,6 +157,11 @@ background-color: rgb(240, 128, 128);
   top: 32%;
   left: 16.6%;
 }
+.selfAware:disabled {
+  color: grey;
+}
+
+
 .selfAware:hover {
   display: block;
   font: inherit;
