@@ -1,5 +1,5 @@
 var iq = 0;
-var money = -0.1;
+var money = 0;
 var moneyPerSecond = 0;
 var iqMulti = 1;
 var costMulti = 0.05;
