@@ -6,8 +6,7 @@ var costMulti = 0.05;
 var minIq = 0.999999999;
 var tickSpeed = 100;
 var wormPS = 0.1
-var readIq = 1
-var readProcress = 0
+
 
 
 //---------------------------------------
@@ -22,7 +21,7 @@ function showMenu() {
 function jobs() {
     document.getElementById("wormsReq").style = "display: block"
     document.getElementById("btn1").style = "display: block"
-    document.getElementById("readReq").style = "display: none"
+    document.getElementById("awareReq").style = "display: none"
     document.getElementById("btn2").style = "display: none"
     document.getElementById("job").style.background = 'rgb(142, 235, 142)';
     document.getElementById("learning").style.background = 'rgb(29, 29, 29)';
@@ -33,7 +32,7 @@ function jobs() {
 
 function learn() {
     document.getElementById("btn2").style = "display: block"
-    document.getElementById("readReq").style = "display: block"
+    document.getElementById("awareReq").style = "display: block"
     document.getElementById("wormsReq").style = "display: none"
     document.getElementById("btn1").style = "display: none"
     document.getElementById("learning").style.background = 'rgb(240, 128, 128)';
@@ -45,7 +44,7 @@ function learn() {
 
 function settings() {
     document.getElementById("wormsReq").style = "display: none"
-    document.getElementById("readReq").style = "display: none"
+    document.getElementById("awareReq").style = "display: none"
     document.getElementById("btn1").style = "display: none"
     document.getElementById("btn2").style = "display: none"
     document.getElementById("job").style.background = 'rgb(29, 29, 29)';
@@ -55,11 +54,12 @@ function settings() {
 
 //---------------------------------------
 
-var wormPerSecond = `Gain ${(wormPS).toFixed(2)} money/s`;
+var wormPerSecond = `Gain: ${(wormPS).toFixed(2)} money/s`;
 document.getElementById("wormsPS").innerHTML = wormPerSecond
 
-var readReq = `Gain ${(readIq).toFixed(2)} IQ`
-document.getElementById("readIq").innerHTML = readReq
+var showIq = `${iq.toFixed(2)}`
+document.getElementById("showIq").innerHTML = showIq 
+
 //---------------------------------------
 
 function addIq() {
@@ -91,44 +91,33 @@ function addIqMulti() {
 }
 
 function eatWorms() {
-    var moneyPerSeconds = `(${(moneyPerSecond += wormPS).toFixed(2)}/s)`;
-    var totalMoney = `${(money += moneyPerSecond).toFixed(2)}`;
-    var wormsJob = document.getElementById("btn1");
-    document.getElementById("totalMoney").innerHTML = totalMoney
-    document.getElementById("moneyPerSecond").innerHTML = moneyPerSeconds
-
-    setInterval(function eatWorms() {
-        var totalMoney = `${(money += moneyPerSecond / 10).toFixed(2)}`;
+    if (iq >= 0.10) {
+        var moneyPerSeconds = `(${(moneyPerSecond += wormPS).toFixed(2)}/s)`;
+        var totalMoney = `${(money += moneyPerSecond).toFixed(2)}`;
+        var wormsJob = document.getElementById("btn1");
         document.getElementById("totalMoney").innerHTML = totalMoney
-    }, tickSpeed)
+        document.getElementById("moneyPerSecond").innerHTML = moneyPerSeconds
 
-    if (wormsJob.disabled = true) {
-        var owning = `(owned)`
-        document.getElementById("owning").innerHTML = owning
+        setInterval(function eatWorms() {
+            var totalMoney = `${(money += moneyPerSecond / 10).toFixed(2)}`;
+            document.getElementById("totalMoney").innerHTML = totalMoney
+        }, tickSpeed)
+        if (wormsJob.disabled = true) {
+            document.getElementById("btn1").style.color = "grey"
+        }
     }
 
 };
 
 
-function learnReading() {
-    if (money >= 1) {
-        var showIq = `${iq += 1}`
-        var totalMoney = ` ${(money -= 1).toFixed(2)}`
-        var readingProcress = `${readProcress += 1}/5` 
-        var learnRead = document.getElementById("btn2");
-        document.getElementById("showIq").innerHTML = showIq
-        document.getElementById("totalMoney").innerHTML = totalMoney
-        document.getElementById("readingProcress").innerHTML = readingProcress
+function selfAware() {
+    var selfAware = document.getElementById("btn2")
+    var showIq = `${(iq += 0.1).toFixed(2)}`
+    document.getElementById("showIq").innerHTML = showIq
 
-        if (readProcress >= 5) {
-            document.getElementById("btn2").disabled = true
-        }
-
-        if (learnRead.disabled == true) {
-            document.getElementById("btn2").style.color = "grey"
-        }
+    if (selfAware.disabled = true) {
+        document.getElementById("btn2").style.color = "grey"
     }
-
 }
 
 
