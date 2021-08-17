@@ -8,7 +8,6 @@ var tickSpeed = 100;
 var wormPS = 0.1
 
 
-
 //---------------------------------------
 
 function showMenu() {
@@ -63,22 +62,29 @@ document.getElementById("showIq").innerHTML = showIq
 
 //---------------------------------------
 
-window.addEventListener('load', (event) => {
+window.addEventListener('load', () => {
 
-    money = JSON.parse(localStorage.getItem('money'));
-    iq = JSON.parse(localStorage.getItem('iq'));
-    moneyPerSecond = JSON.parse(localStorage.getItem('moneyPerSecond'));
+    setInterval(function saveGame() {
+        localStorage.setItem('save', JSON.stringify("save"));
+        localStorage.setItem('iq', JSON.stringify(iq));
+        localStorage.setItem('money', JSON.stringify(money));
+        localStorage.setItem('moneyPerSecond', JSON.stringify(moneyPerSecond));
+    }, 1000)
+
+        money = JSON.parse(localStorage.getItem('money'));
+        iq = JSON.parse(localStorage.getItem('iq'));
+        moneyPerSecond = JSON.parse(localStorage.getItem('moneyPerSecond'));
 
 
-    document.getElementById("showIq").innerHTML = `${iq.toFixed(2)}`
-    document.getElementById("totalMoney").innerHTML = `${money.toFixed(2)}`
-    document.getElementById("moneyPerSecond").innerHTML = `(${moneyPerSecond.toFixed(2)}/s)`
+        document.getElementById("showIq").innerHTML = `${iq.toFixed(2)}`
+        document.getElementById("totalMoney").innerHTML = `${money.toFixed(2)}`
+        document.getElementById("moneyPerSecond").innerHTML = `(${moneyPerSecond.toFixed(2)}/s)`
 
-    setInterval(function eatWorms() {
-        var totalMoney = `${(money += moneyPerSecond / 10).toFixed(2)}`;
-        document.getElementById("totalMoney").innerHTML = totalMoney
-    }, tickSpeed)
 
+        setInterval(function eatWorms() {
+            var totalMoney = `${(money += moneyPerSecond / 10).toFixed(2)}`;
+            document.getElementById("totalMoney").innerHTML = totalMoney
+        }, tickSpeed)
 
 });
 
@@ -145,13 +151,6 @@ function selfAware() {
     }
 }
 
-setInterval(function saveGame() {
-    localStorage.setItem('save', JSON.stringify("save"));
-    localStorage.setItem('iq', JSON.stringify(iq));
-    localStorage.setItem('money', JSON.stringify(money));
-    localStorage.setItem('moneyPerSecond', JSON.stringify(moneyPerSecond));
-}, 50)
-
 
 function loadGame() {
     if (!localStorage.getItem('save')) {
@@ -164,14 +163,9 @@ function loadGame() {
 }
 
 function clearGame() {
-    localStorage.removeItem("iq")
-    localStorage.removeItem("money");
-    localStorage.removeItem("moneyPerSecond");
-    localStorage.removeItem("save");
-    resetBtnState(btns)
-
+    localStorage.clear()
+    window.location.reload();
 }
-
 
 
 //---------------------------------------
@@ -194,7 +188,7 @@ const resetBtnState = function (btns) {
 };
 
 [].forEach.call(btns, function (btn) {
-    btn.addEventListener('click', function (e) {
+    btn.addEventListener('click', function () {
         btn.disabled = true
         window.localStorage.setItem(btn.id, 'disabled')
     })
