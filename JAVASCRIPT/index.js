@@ -195,10 +195,6 @@ const resetBtnState = function (btns) {
     })
 });
 
-/*document.getElementById('reset').addEventListener('click', function (e) {
-  resetBtnState(btns) 
-}); */
-
 getBtnState(btns);
 
 
