@@ -18,9 +18,9 @@ function showMenu() {
 //---------------------------------------
 
 function jobs() {
-
-    document.getElementById("wormsReq").style = "display: block"
     document.getElementById("btn1").style = "display: block"
+    if (document.getElementById("btn1").disabled){document.getElementById("btn1").style.color = "grey"};
+    document.getElementById("wormsReq").style = "display: block"
     document.getElementById("awareReq").style = "display: none"
     document.getElementById("btn2").style = "display: none"
     document.getElementById("job").style.background = 'rgb(142, 235, 142)';
@@ -32,6 +32,7 @@ function jobs() {
 
 function learn() {
     document.getElementById("btn2").style = "display: block"
+    if (document.getElementById("btn2").disabled){document.getElementById("btn2").style.color = "grey"};
     document.getElementById("awareReq").style = "display: block"
     document.getElementById("wormsReq").style = "display: none"
     document.getElementById("btn1").style = "display: none"
